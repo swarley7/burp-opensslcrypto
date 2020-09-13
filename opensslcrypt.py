@@ -2,7 +2,7 @@ from burp import IBurpExtender
 from burp import IMessageEditorTabFactory
 from burp import IMessageEditorTab
 from burp import IParameter
-from exceptions_fix import FixBurpExceptions
+# from exceptions_fix import FixBurpExceptions
 import re
 from javax.crypto import Cipher
 from javax.crypto.spec import IvParameterSpec
@@ -83,7 +83,7 @@ class BurpExtender(IBurpExtender, IMessageEditorTabFactory):
         
         # register ourselves as a message editor tab factory
         callbacks.registerMessageEditorTabFactory(self)
-        sys.stdout = callbacks.getStdout()
+        # sys.stdout = callbacks.getStdout()
         
     # 
     # implement IMessageEditorTabFactory
@@ -192,4 +192,4 @@ class Base64InputTab(IMessageEditorTab):
     def getSelectedData(self):
         return self._txtInput.getSelectedText()
 
-FixBurpExceptions()
+# FixBurpExceptions()
